@@ -1,0 +1,18 @@
+# Loan Application Credit Scoring System
+
+## Problem Statement
+
+Loan Application Credit Scoring Sheet
+
+### Domain
+Lending / Credit Risk
+
+## Use Cases
+
+- Score applicants based on income, obligations, and bureau history using a rule table.
+- Output an Approve / Refer / Decline decision with reasons.
+
+## Bottlenecks Students May Encounter
+
+- Missing bureau history must not default to a zero score.
+- FOIR calculation must include EMIs of co-applicants.
