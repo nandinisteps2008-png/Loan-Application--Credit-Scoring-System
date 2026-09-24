@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Loan Application Credit Scoring</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #173b7a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 5px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .intro h2 {
+            color: #173b7a;
+            margin-bottom: 8px;
+        }
+
+        .main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            color: #173b7a;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin: 15px 0 7px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 22px;
+            background: #173b7a;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0f2b5c;
+        }
+
+        .score {
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
+            color: #173b7a;
+            margin: 20px 0;
+        }
+
+        .decision {
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            background: #e8eef8;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .details {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f5f7fa;
+            border-radius: 8px;
+        }
+
+        .details p {
+            margin: 8px 0;
+        }
+
+        .details ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .details li {
+            margin: 7px 0;
+        }
+
+        .note {
+            margin-top: 20px;
+            color: #666;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        @media (max-width: 750px) {
+            .main {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Loan Application Credit Scoring System</h1>
+    <p>Lending / Credit Risk</p>
+</header>
+
+<div class="container">
+
+    <div class="intro">
+        <h2>Credit Risk Assessment</h2>
+        <p>
+            Evaluate applicants based on income, obligations and bureau history.
+        </p>
+    </div>
+
+    <div class="main">
+
+        <!-- APPLICATION
