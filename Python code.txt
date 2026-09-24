@@ -1,0 +1,79 @@
+# Loan Application Credit Scoring System
+
+def calculate_foir(monthly_income, applicant_emi, coapplicant_emi):
+    total_emi = applicant_emi + coapplicant_emi
+    return (total_emi / monthly_income) * 100
+
+
+def credit_score(income, obligations, bureau_history):
+    score = 0
+    reasons = []
+
+    # Income score
+    if income >= 50000:
+        score += 40
+        reasons.append("Good income")
+    elif income >= 25000:
+        score += 25
+        reasons.append("Moderate income")
+    else:
+        score += 10
+        reasons.append("Low income")
+
+    # Obligations
+    if obligations <= 30:
+        score += 30
+        reasons.append("Low financial obligations")
+    elif obligations <= 50:
+        score += 20
+        reasons.append("Moderate financial obligations")
+    else:
+        score += 5
+        reasons.append("High financial obligations")
+
+    # Bureau history
+    if bureau_history == "good":
+        score += 30
+        reasons.append("Good bureau history")
+    elif bureau_history == "average":
+        score += 20
+        reasons.append("Average bureau history")
+    elif bureau_history == "poor":
+        score += 5
+        reasons.append("Poor bureau history")
+    else:
+        # Missing history does NOT become zero
+        score += 15
+        reasons.append("Bureau history unavailable - manual review")
+
+    return score, reasons
+
+
+# Input
+income = float(input("Enter monthly income: "))
+applicant_emi = float(input("Enter applicant EMI: "))
+coapplicant_emi = float(input("Enter co-applicant EMI: "))
+bureau_history = input("Enter bureau history (good/average/poor/missing): ").lower()
+
+# FOIR includes co-applicant EMI
+foir = calculate_foir(income, applicant_emi, coapplicant_emi)
+
+score, reasons = credit_score(income, foir, bureau_history)
+
+# Decision
+if score >= 75 and foir <= 50:
+    decision = "APPROVE"
+elif score >= 50:
+    decision = "REFER"
+else:
+    decision = "DECLINE"
+
+# Output
+print("\n--- Loan Credit Scoring Result ---")
+print("Credit Score:", score)
+print("FOIR:", round(foir, 2), "%")
+print("Decision:", decision)
+
+print("\nReasons:")
+for reason in reasons:
+    print("-", reason)
